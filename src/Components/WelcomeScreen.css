@@ -1,0 +1,12 @@
+#welcome-screen {
+    padding: 0 20px;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url(../img/bg.gif);
+    color: #FFF;
+}
