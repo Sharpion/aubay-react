@@ -7,7 +7,8 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            showLoginBox: true
+            showLoginBox: true,
+            failedAttempt: false
         };
         
         this.onSubmit = this.onSubmit.bind(this);
@@ -15,11 +16,18 @@ class App extends Component {
     
     onSubmit(username, password) {
         if (username === "test" && password === "123") {
-            this.setState(
-                {
-                    showLoginBox:false
-                }
-            )
+            this.setState({
+                showLoginBox: false,
+            });
+        } else {
+            this.setState({
+                failedAttempt: true,
+            });
+            setTimeout(() => {
+               this.setState({
+                    failedAttempt: false,
+                });
+            }, 1000);
         }
 
     }
@@ -31,7 +39,7 @@ class App extends Component {
                     <h2>Aubay</h2>
                 </header>
                 <main>
-                    <LoginBox visible={this.state.showLoginBox} onSubmit={this.onSubmit}/>
+                    <LoginBox failedAttempt={this.state.failedAttempt} visible={this.state.showLoginBox} onSubmit={this.onSubmit}/>
                     <WelcomeScreen visible={!this.state.showLoginBox} />
                 </main>
                 <footer>

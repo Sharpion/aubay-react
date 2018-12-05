@@ -7,7 +7,7 @@ import { faLock } from '@fortawesome/free-solid-svg-icons'
 
 library.add(faLock);
 
-class MenuBox extends Component {
+class LoginBox extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -42,7 +42,7 @@ class MenuBox extends Component {
     render () {
         if (this.props.visible) {
             return (
-                <div id="login-box" className="shadowed">
+                <div id="login-box" className={this.props.failedAttempt ? 'shake shadowed' : 'shadowed'}>
                     <header className="login-box-header">
                         <div className="text">
                             <h4>Log in to our site</h4>
@@ -80,4 +80,4 @@ class MenuBox extends Component {
     }
 }
 
-export default MenuBox;
+export default LoginBox;
