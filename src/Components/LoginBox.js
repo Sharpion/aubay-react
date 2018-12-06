@@ -53,7 +53,7 @@ class LoginBox extends Component {
                             <FontAwesomeIcon icon="lock" size="3x" />
                         </div>
                     </header>
-                    <div id="form-fields">
+                    <div class="form-fields">
                         <form id="login-form" onSubmit={this.onLoginSubmit}>
                             <input id="username" 
                                 type="text" 
